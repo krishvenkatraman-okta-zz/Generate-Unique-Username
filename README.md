@@ -37,11 +37,11 @@ Should not use inlinehook if your flow is big. When Okta calls your external ser
 
 1.Import the username and email workflow flopack in your workflow environment.
 2.Create a table. Below is a sample data for the table. You can use your own domains for testing.
-brandId,brandDomain,emailTenant
-30105,@kriyahub.com,google
-30106,@kriya.onmicrosoft.com,O365
-30107,@jeykrish.com,Okta
+
+![image](https://user-images.githubusercontent.com/14205843/90940864-24949080-e3c5-11ea-875e-5ba3f8415238.png)
+
 brandID represents attribute coming from HR system, emailTenent represents the target to check for email uniqueness. brandDomain represents the maildomain. Both emailTenant and brandDomain are derived from brandId. You can ignore this if you only one single domain.
+
 3.Establish the connections to the target apps inside workflow, O365,GoogleApps and Okta.
 4. Update the connection in the flows.
 5. Extend the Okta profile with proxyAddresses attribute(String Array).If you are using Okta for validating the proxyAddress
@@ -52,11 +52,14 @@ https://help.okta.com/en/prod/Content/Topics/Directory/csv-integration-get-start
 ### <span style="text-decoration:underline;">Testing this Flow</span>
 
 1) If you have setup the CSV directory. Below is sample entry you can create.
-Below is the sample CSV data.
+
+**Below is the sample CSV data.**
+
 empID,firstName,lastName,userName,email,emp_status,brandId,managerId
 121,Tony,Stark,Tony.stark,tony.stark@gamer.com,active,30104,kvr@jeykrish.com
-2) Configure CSV directory in Okta with all the attributes. 
-3) Associate the inline hook with CSV directory
+
+2) Configure CSV directory in Okta with all the attributes.
+3) Associate the inline hook with CSV directory.
 4) Import the file. This should trigger a inline hook call to the workflows endpoint.
 5) Workflow should return the unique username and email address for the user.
 
