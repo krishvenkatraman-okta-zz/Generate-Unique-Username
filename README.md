@@ -14,6 +14,11 @@ This flow currently provides two things.
     
     
     In the email example i use a BrandID which is used to determine the mail Domain example: Jeykrish.com,kriyahub.com etc. and target email system, Whether O365 or Okta or Google. If you just have a single email domain, You don't need to use this table and you can remove the brand logic inside the workflow.
+
+**Below is the flow diagram sample of this usecase.**
+
+![image](https://user-images.githubusercontent.com/14205843/90941011-adabc780-e3c5-11ea-9972-a47cf1ff1e46.png)
+
     
     
 ### <span style="text-decoration:underline;">Before you get Started / Prerequisites</span>
