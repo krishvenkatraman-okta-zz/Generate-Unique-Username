@@ -1,6 +1,6 @@
 **Unique-username-email-generation**
 
-**Overview:**
+### <span style="text-decoration:underline;">Overview</span>
 
 To Onboard users in an organization, IT needs to generate unique username and Email addresses for the end users. 
 
@@ -16,7 +16,7 @@ This flow currently provides two things.
     In the email example i use a BrandID which is used to determine the mail Domain example: Jeykrish.com,kriyahub.com etc. and target email system, Whether O365 or Okta or Google. If you just have a single email domain, You don't need to use this table and you can remove the brand logic inside the workflow.
     
     
-Before you get Started / Prerequisites
+### <span style="text-decoration:underline;">Before you get Started / Prerequisites</span>
 Before you get started, you will need:
 
 Access to an Okta tenant with Okta Workflows enabled for your org
@@ -28,12 +28,12 @@ You can trigger the flow in two ways.
            https://developer.okta.com/docs/reference/import-hook/#enabling-a-user-import-inline-hook
            
 
-**Design considerations:**
+### <span style="text-decoration:underline;">Design consideration</span>
 
 Should not use inlinehook if your flow is big. When Okta calls your external service, it enforces a default timeout of 3 seconds. Okta will attempt at most one retry. So if your flow is big and going to run for a longer time, you can use the Okta user create event to generate unique username and email.
 
 
-**Setup Steps**
+### <span style="text-decoration:underline;">Setup Steps</span>
 
 1.Import the username and email workflow flopack in your workflow environment.
 2.Create a table. Below is a sample data for the table. You can use your own domains for testing.
@@ -49,7 +49,7 @@ brandID represents attribute coming from HR system, emailTenent represents the t
 https://help.okta.com/en/prod/Content/Topics/Directory/csv-integration-get-started.htm
 7) Get the hookd endpoints from 001-PRD-inlineHookHandler-V1 flow which is setup inside the Uniqueusername folder. Click on the first card endpoint settings at the bottom and copy the invoke URL to the import inline hook endpoint settings in Okta.
 
-**Testing the flow**
+### <span style="text-decoration:underline;">Testing this Flow</span>
 
 1) If you have setup the CSV directory. Below is sample entry you can create.
 Below is the sample CSV data.
@@ -61,6 +61,6 @@ empID,firstName,lastName,userName,email,emp_status,brandId,managerId
 5) Workflow should return the unique username and email address for the user.
 
 
-**Limitations & Known Issues**
+### <span style="text-decoration:underline;">Limitations & Known Issues</span>
 1) Okta workflows does not have any on-premise connector at this time for writing. So all the target should be accessible in public and shall be exposed as an API endpoint.
 2) When Okta calls your external service, it enforces a default timeout of 3 seconds. Okta will attempt at most one retry. A request is not retried if the customer endpoint returns a 4xx HTTP error code
