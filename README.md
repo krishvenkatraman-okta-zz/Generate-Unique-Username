@@ -9,12 +9,19 @@ This flow generates unique Okta username: This username is uniquely generated va
 ### <span style="text-decoration:underline;">Before you get Started / Prerequisites</span>
 Before you get started, you will need:
 
-Access to an Okta tenant with Okta Workflows enabled for your org
+1.Access to an Okta tenant with Okta Workflows enabled for your org
 
-You can trigger the flow in two ways.
-   1) User create Event . Which is more Asyncronous way. Often time you can do this by creating a user in Okta with EmployeeID or something which is unique for all users and Okta workflows can generate a unique username and update the OKta username attribute.
-   2) Import inline hook. Workflow is called during import process.Enabling import inline hook is documented here. Also shown in the video.
+2.You can trigger the flow in two ways.
+   a) User create Event . Which is more Asyncronous way. Often time you can do this by creating a user in Okta with EmployeeID or something unique as Okta Username for all users and Okta workflows can generate a unique username and update the OKta username attribute.
+   b) Import inline hook. Workflow is called during import process.Enabling import inline hook is documented here. Also shown in the video.
            https://developer.okta.com/docs/reference/import-hook/#enabling-a-user-import-inline-hook
+         
+    **Also inline hook is useful to Link users, If there is a conflict of users**
+    
+ 3.To create manager linked object. You can create a manager linked object attribute in Okta profile. This can be part of onboarding as well.
+ More details here https://developer.okta.com/docs/reference/api/linked-objects/
+ 
+   
            
 
 ### <span style="text-decoration:underline;">Design consideration</span>
@@ -29,9 +36,11 @@ Should not use inlinehook if your flow is big. When Okta calls your external ser
 4. Update the connection in the flows.
 5. Integrate CSV directory with Okta. If you have another HR system, You can also hook that to test end to end workflow.
 https://help.okta.com/en/prod/Content/Topics/Directory/csv-integration-get-started.htm
-7) Get the hook endpoints from 001-PRD-inlineHookHandler-V1 flow which is setup inside the Uniqueusername folder. Click on the first card endpoint settings at the bottom and copy the invoke URL to the import inline hook endpoint settings in Okta.
+6) Get the hook endpoints from 001-PRD-inlineHookHandler-V1 flow which is setup inside the Uniqueusername folder. Click on the first card endpoint settings at the bottom and copy the invoke URL to the import inline hook endpoint settings in Okta.
 
 ![image](https://user-images.githubusercontent.com/14205843/90942964-b0f68180-e3cc-11ea-8331-96ddcb39ae50.png)
+
+7) Also update the connections for ManagerLinkedObject flow as well. So that once the user is created in OKta. This flow will be triggered and manager linked object will be created. 
 
 
 ### <span style="text-decoration:underline;">Testing this Flow</span>
