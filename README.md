@@ -1,4 +1,4 @@
-**Unique-username-email-generation**
+**Use Import Inline Hook to Create Unique Identifier **
 
 ### <span style="text-decoration:underline;">Overview</span>
 
