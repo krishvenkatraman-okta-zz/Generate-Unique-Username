@@ -1,0 +1,18 @@
+{
+   "name": "Generate-Unique-Username",
+   "title": "Generate unique Okta Username using firstname and lastname of the user",
+   "description": "To Onboard users in an organization, IT needs to generate unique Okta username, Which shall also be used in the downstream applications like Active directory as SamAccountname and UPN"
+   "connectors": [
+      "Okta"
+   ],
+   "links": [
+      {
+         "title": "Video Walk-through",
+         "destination": "https://www.loom.com/share/d3fa59b9a6ca44fca8d0e2fc5c5c9c2a"
+      },
+      {
+         "title": "Setup Documentation",
+         "destination": "https://github.com/krishvenkatraman-okta/Generate-Unique-Username/README.md"
+      }
+   ]
+}
