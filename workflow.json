@@ -1,6 +1,6 @@
 {
    "name": "Generate-Unique-Username",
-   "title": "Generate unique Okta username using firstname and lastname of the user",
+   "title": "Generate unique Okta username using firstname and lastname",
    "description": "To Onboard users in an organization, IT needs to generate unique Okta username, Which shall also be used in the downstream applications like Active directory as SamAccountname and UPN",
    "connectors": [
       "Okta"
